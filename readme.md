@@ -10,6 +10,7 @@ Website based on the technical skills
 
 - [Installation](#installation)
 - [Information](#Information)
+- [Explanation](#explanation)
 - [Contact](#contact)
 
 ## Installation
@@ -61,6 +62,34 @@ The project was built using two approaches for handling images: the first, in wh
 4. When there is an `<img>` with the style `object-fit: cover` the best way to avoid a wrong behavior is to include the property `draggable="false"`, so I included and also added the lazy loading property.
 
 5. The spacing in the project is controlled using percentages. While calculations based on aspect ratios might be an alternative, achieving a similar outcome to the video was possible with simpler percentages.
+
+## Explanation
+
+All points were made,
+
+1. Use bootstrap5 html framework to code the webpage (bootstrap branch)
+
+   - Has a simple solution to use bootstrap and replace a variable and few things. Line 96-101
+
+2. Webpage must be responsive and must use grid structure (main branch)
+
+   - Included a solution with the class grid and SCSS. Line 18-25
+
+3. Use Vanilla JS/jQuery wherever is required, no external plugins allowed. (main/bootstrap branch)
+
+   - Isn't required but I left an example code in the src/js/script.js. It makes a class toggle to the parent element, is linked with a border style. Just need to remove the comments.
+
+4. Image box must always be square and image should always fill the box. (main/bootstrap branch)
+
+   - SCSS has the solution. The label element has an style with aspect-ratio: 1/1. Line 37
+
+5. Those boxes must be checkbox and image should be background image of those checkboxes. (main/bootstrap branch)
+
+   - I made two approaches one with the image as background and other with an <img> tag to improve accessibility, performance, SEO) Same result almost same code for both of them.
+
+6. As the default property of checkbox, i should be able to select those image and selection should be highlighted with outline/border, selection part must be done using only css without any js
+
+   - Was made with SCSS also with a Javascript code.
 
 ## Contact
 
