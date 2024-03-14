@@ -47,7 +47,9 @@ The application will now be running on `http://localhost:9000`.
 
 All points were made (updated) all in the main branch.
 
-1. Use bootstrap5 html framework to code the webpage. (Added just the link style)
+1. Use bootstrap5 html framework to code the webpage.
+
+   - Was included as a CSS `<Link>` doesn't require to change variables or original behaviour with mixins.
 
 2. Image should only load when in viewport.
 
