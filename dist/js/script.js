@@ -1,0 +1,1 @@
+const itemsWithClass=new Set,observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&!itemsWithClass.has(e.target)&&(itemsWithClass.add(e.target),(e=e.target).classList.add("lazy-background"),observer.unobserve(e))})},{root:null,threshold:[1]}),labels=document.querySelectorAll(".without-image");labels.forEach(e=>{observer.observe(e)});

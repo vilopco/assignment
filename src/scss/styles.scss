@@ -75,21 +75,37 @@ label {
     filter: $shadow;
   }
   &.without-image {
-    &.bg-1 {
+    &.bg-1.lazy-background {
       background: url("https://acre-image-collections.s3.amazonaws.com/image-6578722caea701702392364_medium.jpg")
         no-repeat 50% 50% / cover;
     }
-    &.bg-2 {
+    &.bg-2.lazy-background {
       background: url("https://acre-images.s3.amazonaws.com/image-5ac62b9e561041522936734_medium.jpeg")
         no-repeat 50% 50% / cover;
     }
-    &.bg-4 {
-      background: url("https://acre-image-collections.s3.amazonaws.com/image-65787222618211702392354_medium.jpg")
-        no-repeat 50% 50% / cover;
+    &.bg-4.lazy-background {
+      background: url("https://placehold.co/600x400?text=Image+1") no-repeat 50%
+        50% / cover;
     }
-    &.bg-5 {
-      background: url("https://acre-image-collections.s3.amazonaws.com/image-657872175b22e1702392343_medium.jpg")
-        no-repeat 50% 50% / cover;
+    &.bg-5.lazy-background {
+      background: url("https://placehold.co/400x800?text=Image+2") no-repeat 50%
+        50% / cover;
+    }
+    &.bg-6.lazy-background {
+      background: url("https://placehold.co/900x1400?text=Image+3") no-repeat
+        50% 50% / cover;
+    }
+    &.bg-7.lazy-background {
+      background: url("https://placehold.co/220x340?text=Image+4") no-repeat 50%
+        50% / cover;
+    }
+    &.bg-8.lazy-background {
+      background: url("https://placehold.co/120x400?text=Image+5") no-repeat 50%
+        50% / cover;
+    }
+    &.bg-9.lazy-background {
+      background: url("https://placehold.co/600x200?text=Image+6") no-repeat 50%
+        50% / cover;
     }
     input:checked + & {
       border-color: $border-color-checked;
