@@ -9,8 +9,8 @@ Website based on the technical skills
 ## Table of Contents
 
 - [Installation](#installation)
-- [Information](#Information)
 - [Explanation](#explanation)
+- [Extra Information](#Information)
 - [Contact](#contact)
 
 ## Installation
@@ -42,18 +42,6 @@ npm run dev
 ```
 
 The application will now be running on `http://localhost:9000`.
-
-## Information
-
-1. This project doesn't require Bootstrap, but minor changes can achieve the same results without affecting the layout.
-
-2. Grunt Setup: As this was my first time with a Grunt-based environment, I focused on incorporating essential tools:
-
-- Watching for changes in files
-- Running a live reload server
-- Compiling Sass with Grunt
-- Minifying or uglifying JavaScript
-- ES6 JavaScript Example (Optional): To showcase my JavaScript skills, I added a snippet (using ES6) that changes the border of an element based on the checkbox state. The code also handles an initial checked state if it is present in the HTML.
 
 ## Explanation
 
@@ -92,6 +80,18 @@ All points were made (updated) all in the main branch.
 8. As the default property of checkbox, i should be able to select those image and selection should be highlighted with outline/border, selection part must be done using only css without any js
 
    - Was made with SCSS also with a bonus Javascript code.
+
+## Extra Information
+
+1. This project doesn't require Bootstrap, but minor changes can achieve the same results without affecting the layout.
+
+2. Grunt Setup: As this was my first time with a Grunt-based environment, I focused on incorporating essential tools:
+
+- Watching for changes in files
+- Running a live reload server
+- Compiling Sass with Grunt
+- Minifying or uglifying JavaScript
+- ES6 JavaScript Example (Optional): To showcase my JavaScript skills, I added a snippet (using ES6) that changes the border of an element based on the checkbox state. The code also handles an initial checked state if it is present in the HTML.
 
 ## Contact
 
