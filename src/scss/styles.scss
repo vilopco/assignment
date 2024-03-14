@@ -17,11 +17,17 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0.6%;
+  grid-gap: 1rem;
   align-content: space-evenly;
   max-width: calc(100% - 2rem);
   margin: 20px auto;
+  grid-template-columns: 1fr;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .col {
@@ -74,7 +80,15 @@ label {
         no-repeat 50% 50% / cover;
     }
     &.bg-2 {
+      background: url("https://acre-images.s3.amazonaws.com/image-5ac62b9e561041522936734_medium.jpeg")
+        no-repeat 50% 50% / cover;
+    }
+    &.bg-4 {
       background: url("https://acre-image-collections.s3.amazonaws.com/image-65787222618211702392354_medium.jpg")
+        no-repeat 50% 50% / cover;
+    }
+    &.bg-5 {
+      background: url("https://acre-image-collections.s3.amazonaws.com/image-657872175b22e1702392343_medium.jpg")
         no-repeat 50% 50% / cover;
     }
     input:checked + & {
@@ -93,8 +107,8 @@ label.checked img,
 
 // If bootstrap is active
 .container-fluid .row {
-  --bs-gutter-x: 1%;
-  margin-top: 0.6%;
+  --bs-gutter-x: 1rem;
+  margin-top: 1rem;
   .col {
     max-width: 25%;
   }
