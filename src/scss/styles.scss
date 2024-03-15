@@ -2,29 +2,6 @@ $border-color: white;
 $border-color-checked: red;
 $border-width: 4px;
 $shadow: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
-$images: (
-  "bg-1":
-    "https://acre-image-collections.s3.amazonaws.com/image-6578722caea701702392364_medium.jpg",
-  "bg-2":
-    "https://acre-images.s3.amazonaws.com/image-5ac62b9e561041522936734_medium.jpeg",
-  "bg-3":
-    "https://acre-images.s3.amazonaws.com/image-5acac631504581523238449_medium.jpeg",
-  "bg-4":
-    "https://acre-image-collections.s3.amazonaws.com/image-65787222618211702392354_medium.jpg",
-  "bg-5":
-    "https://acre-image-collections.s3.amazonaws.com/image-657872175b22e1702392343_medium.jpg",
-  "bg-6":
-    "https://acre-image-collections.s3.amazonaws.com/image-657871ff7d8401702392319_medium.jpg",
-  "bg-7":
-    "https://acre-image-collections.s3.amazonaws.com/image-6576286c7c4b61702242412_medium.jpg",
-  "bg-8":
-    "https://acre-image-collections.s3.amazonaws.com/image-6578af5f9af671702408031_medium.jpg",
-  "bg-9":
-    "https://acre-images.s3.amazonaws.com/image-5b01cdf4b2e9a1526844916.jpg",
-  "bg-10": "https://placehold.co/600x200?text=Image+1",
-  "bg-11": "https://placehold.co/300x500?text=Image+2",
-  "bg-12": "https://placehold.co/90x1200?text=Image+3",
-);
 
 *,
 *::before,
@@ -36,37 +13,19 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ecf0f3;
-}
-
-.grid {
-  display: grid;
-  grid-gap: 1rem;
-  align-content: space-evenly;
-  max-width: calc(100% - 2rem);
-  margin: 20px auto;
-  grid-template-columns: 1fr;
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (min-width: 992px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
-.col-lg-3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height: 0;
 }
 
 input {
-  display: none;
-}
-
-label {
   position: relative;
   aspect-ratio: 1/1;
   width: 100%;
+  appearance: none;
+  border: $border-width solid $border-color;
+  filter: $shadow;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
   &::after {
     content: "";
     display: block;
@@ -82,39 +41,9 @@ label {
     background-size: contain;
     z-index: 1;
   }
-  input:checked + img {
+  &:checked {
     border-color: $border-color-checked;
   }
-
-  span {
-    display: none;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50%;
-    border: $border-width solid $border-color;
-    filter: $shadow;
-  }
-  &.without-image {
-    @each $class, $url in $images {
-      &.#{$class}.lazy-background {
-        background: url(#{$url}) no-repeat 50% 50% / cover;
-      }
-    }
-    input:checked + & {
-      border-color: $border-color-checked;
-    }
-
-    border: $border-width solid $border-color;
-    filter: $shadow;
-  }
-}
-
-label.checked img,
-.col.checked label {
-  border-color: $border-color-checked;
 }
 
 [class*="col-"] {
