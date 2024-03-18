@@ -1,3 +1,21 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/containers";
+$prefix: "mo-";
+
+@mixin row-cols($count) {
+  > * {
+    flex: 0 0 auto;
+    width: percentage(divide(1, $count));
+    height: 0;
+    padding-bottom: calc(percentage(divide(1, $count)) - var(--mo-gutter-y));
+  }
+}
+
+@import "../../node_modules/bootstrap/scss/_grid.scss";
+
 $border-color: white;
 $border-color-checked: red;
 $border-width: 4px;
@@ -16,11 +34,12 @@ body {
   line-height: 0;
 }
 
-input {
+input[type="checkbox"] {
   position: relative;
   height: 0;
   width: 100%;
-  padding-bottom: calc(100% - 8px);
+  margin: 0;
+  padding-bottom: calc(100% - $border-width * 2);
   appearance: none;
   border: $border-width solid $border-color;
   filter: $shadow;
@@ -49,4 +68,9 @@ input {
 
 [class*="col-"] {
   line-height: 0;
+}
+
+.py-3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

@@ -5,7 +5,7 @@ class ImageBuilder {
 
   async init() {
     const images = await fetchImages();
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < images.length; i++) {
       this.renderImage(images[i], i);
     }
     const inputs = document.querySelectorAll("input");
@@ -16,7 +16,7 @@ class ImageBuilder {
 
   renderImage = (image, index) => {
     const container = document.querySelector("#image-grid");
-    const inputDiv = document.createElement("div");
+    const inputDiv = document.createElement("label");
     inputDiv.innerHTML = `
       <input type="checkbox" id="checkbox-${index}" image-url=${image} />
     `;
@@ -45,8 +45,11 @@ const fetchImages = async () => {
   const response = await fetch(
     "https://imiwkhfqgckbpe5qhiyusahjxe0dmrba.lambda-url.us-east-1.on.aws/"
   );
+  if (!response.ok) {
+    throw new Error("Failed to fetch images");
+  }
   const data = await response.json();
-  return data.images;
+  return data.images || [];
 };
 
 const imageBuilder = new ImageBuilder();
